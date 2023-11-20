@@ -16,6 +16,7 @@
 			crossorigin="anonymous"
 	/>
 <style>
+
 #list {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -123,31 +124,39 @@ strong {
 	</div>
 </header>
 <%
-	BabgoDAO boardDAO = new BabgoDAO();
-	List<BabgoVO> list = boardDAO.getBabgoList();
+	BabgoDAO babgoDAO = new BabgoDAO();
+	List<BabgoVO> list = babgoDAO.getBabgoList();
 	request.setAttribute("list",list);
 %>
-<table id="list" width="90%">
-<tr>
-	<th>Id</th>
-	<th>밥고이름</th>
-	<th>요일</th>
-	<th>시간</th>
-	<th>추가설명</th>
-	<th>수정</th>
-	<th>삭제</th>
-</tr>
-<c:forEach items="${list}" var="u">
-	<tr>
-		<td>${u.getBabgoID()}</td>
-		<td><a href="view.jsp?id=${u.getBabgoID()}">${u.getBabgoName()}</a></td>
-		<td>${u.getBabgoDate()}</td>
-		<td>${u.getBabgoTime()}</td>
-		<td>${u.getDescription()}</td>
-		<td><a href="editform.jsp?id=${u.getBabgoID()}">Edit</a></td>
-		<td><a href="javascript:delete_ok('${u.getBabgoID()}')">Delete</a></td>
-	</tr>
-</c:forEach>
-</table>
+<main>
+	<div class="title">Bab-Go List</div>
+	<div class="list">
+		<div class="table-responsive small">
+			<table class="table table-striped table-sm">
+
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">밥고이름</th>
+					<th scope="col">요일</th>
+					<th scope="col">시간</th>
+					<th scope="col">추가설명</th>
+					<th scope="col">수정</th>
+					<th scope="col">삭제</th>
+				</tr>
+				<c:forEach items="${list}" var="u">
+					<tr>
+						<td>${u.getBabgoID()}</td>
+						<td><a href="view.jsp?id=${u.getBabgoID()}">${u.getBabgoName()}</a></td>
+						<td>${u.getBabgoDate()}</td>
+						<td>${u.getBabgoTime()}</td>
+						<td>${u.getBabgoDescription()}</td>
+						<td><a href="editform.jsp?id=${u.getBabgoID()}">Edit</a></td>
+						<td><a href="javascript:delete_ok('${u.getBabgoID()}')">Delete</a></td>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
+	</div>
+</main>
 </body>
 </html>

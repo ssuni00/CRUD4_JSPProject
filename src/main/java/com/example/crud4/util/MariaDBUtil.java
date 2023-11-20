@@ -19,13 +19,14 @@ public class MariaDBUtil {
 		}
 
 		return con;
-	}  
-	
-//	public static void main(String ars[]) {
-//		Connection conn = getConnection();
-//		if(conn != null)
-//			System.out.println("DB 연결됨!");
-//		else
-//			System.out.println("DB 연결중 오류 !");
-//	}
+	}
+
+//	public static void main(String[] args){
+//        Connection con = MariaDBUtil.getConnection();
+//        if(con == null){
+//            System.out.println("not connected!!");
+//        }else{
+//            System.out.println("connected!!");
+//        }
+//    }
 }

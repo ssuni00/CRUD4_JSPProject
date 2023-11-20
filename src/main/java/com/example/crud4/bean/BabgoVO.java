@@ -6,7 +6,7 @@ public class BabgoVO {
 	private String BabgoName;
 	private String BabgoDate;
 	private String BabgoTime;
-	private String Description;
+	private String BabgoDescription;
 	private Date regdate;
 
 
@@ -14,55 +14,46 @@ public class BabgoVO {
 		return BabgoID;
 	}
 
-	public void setBabgoID(int BabgoID) {
-
-		this.BabgoID = BabgoID;
+	public void setBabgoID(int babgoID) {
+		this.BabgoID = babgoID;
 	}
 
 	public String getBabgoName() {
 		return BabgoName;
 	}
 
-	public void setBabgoName(String BabgoName) {
-
-		this.BabgoName = BabgoName;
+	public void setBabgoName(String babgoName) {
+		this.BabgoName = babgoName;
 	}
 
 	public String getBabgoDate() {
-
 		return BabgoDate;
 	}
 
-	public void setBabgoDate(String BabgoDate) {
-
-		this.BabgoDate = BabgoDate;
+	public void setBabgoDate(String babgoDate) {
+		this.BabgoDate = babgoDate;
 	}
 
 	public String getBabgoTime() {
-
 		return BabgoTime;
 	}
 
-	public void setBabgoTime(String BabgoTime) {
-
-		this.BabgoTime = BabgoTime;
+	public void setBabgoTime(String babgoTime) {
+		this.BabgoTime = babgoTime;
 	}
 
-	public String getDescription() {
-		return Description;
+	public String getBabgoDescription() {
+		return BabgoDescription;
 	}
 
-	public void setDescription(String Description) {
-
-		this.Description = Description;
+	public void setBabgoDescription(String babgoDescription) {
+		this.BabgoDescription = babgoDescription;
 	}
 
 	public Date getRegdate() {
-		return
-				regdate;
+		return regdate;
 	}
 	public void setRegdate(Date regdate) {
-
 		this.regdate = regdate;
 	}
 }

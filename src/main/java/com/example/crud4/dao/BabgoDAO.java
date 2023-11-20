@@ -18,7 +18,7 @@ public class BabgoDAO {
     private final String Babgo_UPDATE = "update Babgo set BabgoName=?, BabgoDate=? ,BabgoTime=?, Description=? where BabgoID=? ";
     private final String Babgo_DELETE = "delete from Babgo where BabgoID=?";
     private final String Babgo_GET = "select * from Babgo where BabgoID=?";
-    private final String Babgo_LIST ="select * from Babgo order by BabgoID desc";
+    private final String Babgo_LIST ="select * from Babgo order by BabgoID";
 
 
 
@@ -30,9 +30,7 @@ public class BabgoDAO {
             stmt.setString(1, vo.getBabgoName());
             stmt.setString(2, vo.getBabgoDate());
             stmt.setString(3, vo.getBabgoTime());
-            stmt.setString(4, vo.getDescription());
-
-            System.out.println(vo.getBabgoName() + "-" + vo.getBabgoDate() + "-" + vo.getBabgoTime() + "-" + vo.getBabgoDescription());
+            stmt.setString(4, vo.getBabgoDescription());
 
             stmt.executeUpdate();
             return 1;
@@ -50,7 +48,7 @@ public class BabgoDAO {
             stmt.setString(1, vo.getBabgoName());
             stmt.setString(2, vo.getBabgoDate());
             stmt.setString(3, vo.getBabgoTime());
-            stmt.setString(4, vo.getDescription());
+            stmt.setString(4, vo.getBabgoDescription());
             stmt.setInt(5, vo.getBabgoID());
 
             System.out.println(vo.getBabgoName() + "-" + vo.getBabgoDate() + "-" + vo.getBabgoTime() + "-" + vo.getBabgoDescription());
@@ -88,7 +86,7 @@ public class BabgoDAO {
                 one.setBabgoName(rs.getString("BabgoName"));
                 one.setBabgoDate(rs.getString("BabgoDate"));
                 one.setBabgoTime(rs.getString("BabgoTime"));
-                one.setDescription(rs.getString("Description"));
+                one.setBabgoDescription(rs.getString("Description"));
             }
             rs.close();
         } catch (Exception e) {
@@ -109,7 +107,7 @@ public class BabgoDAO {
                 one.setBabgoName(rs.getString("BabgoName"));
                 one.setBabgoDate(rs.getString("BabgoDate"));
                 one.setBabgoTime(rs.getString("BabgoTime"));
-                one.setDescription(rs.getString("Description"));
+                one.setBabgoDescription(rs.getString("Description"));
                 one.setRegdate(rs.getDate("regdate"));
                 list.add(one);
             }
